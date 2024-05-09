@@ -1,0 +1,57 @@
+* First line
+.include "2um_CMOS.modlib"
+
+
+*Definición de subcircuitos
+
+* Inversor de 1w de dimension sin capacitancias parasitas
+.subckt inv_1w_nopara nin nout nsup ngnd
+Mpmos nout nin nsup nsup P_2u L=2u W=6u AD=36p PD=24u AS=36p PS=24u ;
+Mnmos nout nin ngnd ngnd N_2u L=2u W=6u AD=36p PD=24u AS=36p PS=24u ;
+.ends
+
+* Inversor de 3w de dimension sin capacitancias parasitas
+.subckt inv_3w_nopara nin nout nsup ngnd
+Mpmos nout nin nsup nsup P_2u L=2u W=18u AD=108p PD=48u AS=108p PS=48u ;
+Mnmos nout nin ngnd ngnd N_2u L=2u W=18u AD=108p PD=48u AS=108p PS=48u ;
+.ends
+
+* Inversor de 1w de dimension con capacitancias parasitas
+.subckt inv_1w_para nin nout nsup ngnd
+Mpmos nout nin nsup nsup P_2u L=2u W=6u AD=36p PD=24u AS=36p PS=24u ;
+Mnmos nout nin ngnd ngnd N_2u L=2u W=6u AD=36p PD=24u AS=36p PS=24u ;
+
+Cpar1 nsup 0 171.56183f
+Cpar2 ngnd 0 137.77681f
+Cpar3 nout 0 138.46099f
+Cpar4 nin 0 8.9924632f
+.ends
+
+* Inversor de 3w de dimension con capacitancias parasitas
+.subckt inv_3w_para nin nout nsup ngnd
+Mpmos nout nin nsup nsup P_2u L=2u W=18u AD=108p PD=48u AS=108p PS=48u ;
+Mnmos nout nin ngnd ngnd N_2u L=2u W=18u AD=108p PD=48u AS=108p PS=48u ;
+
+Cpar1 nsup 0 472.94321f
+Cpar2 ngnd 0 413.9192f
+Cpar3 nout 0 412.03771f
+Cpar4 nin 0 13.195057f
+.ends
+
+
+*Instanciamiento de circuiteria
+
+* Inversor de 1w de dimension sin capacitancias parasitas
+X_inv1w_nopara Vin vout_1w_nopara Vdd 0 inv_1w_nopara
+X_inv3w_nopara Vin vout_3w_nopara Vdd 0 inv_3w_nopara
+X_inv1w_para Vin vout_1w_para Vdd 0 inv_1w_para
+X_inv3w_para Vin vout_3w_para Vdd 0 inv_3w_para
+
+* Definición de Voltajes
+Vdd Vdd 0 DC 5
+Vin Vin 0 PULSE(5 0 0.01m 1p 1p 0.01m 0.02m 1)
+
+
+*Definición de analisis
+.tran 30u uic
+

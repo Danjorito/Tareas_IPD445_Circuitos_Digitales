@@ -1,0 +1,9 @@
+* C:\Users\danjo\Documents\GitHub\Tareas_IPD445_Circuitos_Digitales\Tarea_2\Draft2.asc
+M1 Vout Vin 0 0 N_2u l=2 w=18
+M2 Vout Vin Vdd Vdd P_2u l=2 w=18
+Vin Vin 0 0
+V2 Vdd 0 5
+.include "2um_CMOS.modlib"
+.dc Vin 0 5 1m
+.backanno
+.end

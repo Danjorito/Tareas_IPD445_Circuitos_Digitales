@@ -55,3 +55,48 @@ Vin Vin 0 PULSE(5 0 0.01m 1p 1p 0.01m 0.02m 1)
 *Definición de analisis
 .tran 30u uic
 
+
+* Analisis de dimensiones
+* tp_LH
+* 1w = 10.000262 us - 10 us
+* 3w = 10.000248 us - 10 us
+
+* tp_HL
+* 1w = 20.000078 us - 20 us
+* 3w = 20.000074 us - 20 us
+
+* tp
+* 1w = (262 ps + 78 ps )/2 = 170 ps
+* 3w = (248 ps + 74 ps )/2 = 161 ps
+
+* diferencia de tp
+* 1w - 3w = 170 ps - 161 ps = 9 ps
+
+* Analisis de parasitos
+
+* 1w
+* tp_LH
+* para =    10.001156 us - 10 us
+* no_para = 10.000262 us - 10 us
+
+*tp_HL
+* para =    20.000358 us - 20 us
+* no_para = 20.000078 us - 20 us
+
+*tp
+* para =    (1156 ps + 358 ps )/2 = 757 ps
+* no_para = (262 ps  + 78 ps  )/2 = 170 ps
+
+*3w
+* tp_LH
+* para =    10.001122 us - 10 us
+* no_para = 10.000248 us - 10 us
+
+*tp_HL
+* para =    20.000349 us - 20 us
+* no_para = 20.000074 us - 20 us
+
+*tp
+* para =    (1122 ps + 349 ps )/2 = 735.5 ps
+* no_para = (248 ps  + 74 ps  )/2 = 161 ps
+

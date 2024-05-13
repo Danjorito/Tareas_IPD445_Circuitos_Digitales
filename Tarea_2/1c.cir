@@ -1,10 +1,10 @@
 * C:\Users\danjo\Documents\GitHub\Tareas_IPD445_Circuitos_Digitales\Tarea_2\Draft2.asc
 M1 Vout Vin 0 0 N_2u l=2 w=6
-M2 Vout Vin Vdd Vdd P_2u l=2 w=23.4
+M2 Vout Vin Vdd Vdd P_2u l=2 w={X}
 Vin Vin 0 0
 V2 Vdd 0 5
 .include "2um_CMOS.modlib"
 .dc Vin 0 5 1m
-* .step param X 23.3 23.4 0.01
+.step param X 23 24 0.1
 .backanno
 .end

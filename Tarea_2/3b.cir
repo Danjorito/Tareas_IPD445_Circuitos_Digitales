@@ -48,5 +48,5 @@ M11 X OUT 0 0 N_2u L=2u W=6u AD=72p PD=48u AS=108p PS=72u
 Vin in 0 5
 V2 Vdd 0 5
 *.dc Vin 0 20 1m
-.dc Vin 5 -5 1m
+.dc Vin 0 5 1m
 .END

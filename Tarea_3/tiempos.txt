@@ -1,2 +1,0 @@
-para peor caso:  2.52 ns
-para mejor caso: 1.39 ns

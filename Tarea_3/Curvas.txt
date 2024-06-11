@@ -1,3 +1,0 @@
-La más a la izquierda por ahora A = 0->5, B,C,D,E = 5    Va = 1.577 para Vout = 2.5
-
-el caso más a la derecha es mover todos al mismo tiempo de 0 a 5. V

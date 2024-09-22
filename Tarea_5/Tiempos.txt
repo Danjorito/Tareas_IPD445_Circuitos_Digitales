@@ -1,0 +1,4 @@
+E1: tcq = 29ps, tlogic = 38ps, tsu = 0 porque se trabaja con latches entonces captura puede ser durante todo el alto del CLK.
+E2: tcq = igual, tlogic = 4ps
+
+Periodo mínimo = (29ps + 28ps)*2 = 67ps
